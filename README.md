@@ -1,6 +1,5 @@
 # Weather App
-Demo App with OpenWeather API
-A demo to show MVVM with RxJava, Retrofit, LiveData and Data-Binding
+Demo App with OpenWeather API to show MVVM with RxJava, Retrofit, LiveData and Data-Binding
 
 App will be for only portrait orientation supporting multiple screen sizes except tablets.
 
