@@ -24,12 +24,14 @@
             android:background="@android:color/white"
             android:padding="@dimen/margin_tv_item">
 
+
             <TextView
                 android:id="@+id/label_date"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_tv_item"
                 android:text="Date:"
+                android:textColor="@android:color/black"
                 app:layout_constraintEnd_toStartOf="@+id/tv_date"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +41,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_tv_item"
+                android:textColor="@android:color/black"
                 android:text="@{dataModel.formattedDate}"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +54,7 @@
                 android:id="@+id/label_maxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
                 android:layout_marginTop="@dimen/margin_tv_item"
                 android:text="Max Temp:"
                 app:layout_constraintEnd_toStartOf="@+id/tv_maxt"
@@ -62,6 +66,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_tv_item"
+                android:textColor="@android:color/black"
                 android:text="@{dataModel.maxT}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/label_maxt"
@@ -73,6 +78,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_tv_item"
+                android:textColor="@android:color/black"
                 android:text="Weather:"
                 app:layout_constraintEnd_toStartOf="@+id/tv_humidity"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,6 +88,7 @@
                 android:id="@+id/tv_humidity"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
                 android:layout_marginTop="@dimen/margin_tv_item"
                 android:text="@{dataModel.humid}"
                 app:layout_constraintEnd_toEndOf="parent"

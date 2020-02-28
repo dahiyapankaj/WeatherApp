@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.weatherapp.R;
 import com.weatherapp.data.models.zip.CurrentWeatherResponse;
+import com.weatherapp.data.utils.KeyboardUtils;
 import com.weatherapp.databinding.FragmentCurrentWeatherBinding;
 import com.weatherapp.views.ActivityHandler;
 
@@ -30,6 +31,12 @@ public class CurrentWeatherFragment extends Fragment {
         fragment.setArguments(bundle);
         fragment.activityHandler = activityHandler;
         return fragment;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        KeyboardUtils.hideKeyboard(getActivity());
     }
 
     @Override

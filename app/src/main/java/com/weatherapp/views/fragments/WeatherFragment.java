@@ -20,6 +20,7 @@ import com.weatherapp.R;
 import com.weatherapp.data.models.weekly.WeatherForecastResponse;
 import com.weatherapp.data.models.zip.CurrentWeatherResponse;
 import com.weatherapp.data.network.NetworkState;
+import com.weatherapp.data.utils.KeyboardUtils;
 import com.weatherapp.viewmodels.WeatherFragmentViewModel;
 import com.weatherapp.views.ActivityHandler;
 
@@ -55,6 +56,12 @@ public class WeatherFragment extends Fragment {
         initObservers();
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        KeyboardUtils.hideKeyboard(getActivity());
+    }
+
     private void initObservers() {
 
         etZip.addTextChangedListener(new TextWatcher() {
@@ -72,7 +79,7 @@ public class WeatherFragment extends Fragment {
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
                 if (s.length() == 6) {
-                    hideKeyboard();
+                    KeyboardUtils.hideKeyboard(getActivity());
                     etZip.clearFocus();
                 }
             }
@@ -82,7 +89,7 @@ public class WeatherFragment extends Fragment {
             @Override
             public void onChanged(WeatherForecastResponse result) {
                 activityHandler.addFragment(ForecastFragment.newInstance(activityHandler, result), true);
-                hideKeyboard();
+                KeyboardUtils.hideKeyboard(getActivity());
             }
         });
 
@@ -90,7 +97,7 @@ public class WeatherFragment extends Fragment {
             @Override
             public void onChanged(CurrentWeatherResponse result) {
                 activityHandler.addFragment(CurrentWeatherFragment.newInstance(activityHandler, result), true);
-                hideKeyboard();
+                KeyboardUtils.hideKeyboard(getActivity());
             }
         });
         mViewModel.loadingMutableLiveData.observe(getActivity(), new Observer<NetworkState>() {
@@ -109,10 +116,7 @@ public class WeatherFragment extends Fragment {
         });
     }
 
-    private void hideKeyboard() {
-        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-    }
+
 
     private void initViews() {
         buttonCurrent = getView().findViewById(R.id.btn_current);

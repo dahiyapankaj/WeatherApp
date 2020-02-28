@@ -17,6 +17,7 @@ import com.weatherapp.R;
 import com.weatherapp.data.adapters.ListAdapter;
 import com.weatherapp.data.models.weekly.List;
 import com.weatherapp.data.models.weekly.WeatherForecastResponse;
+import com.weatherapp.data.utils.KeyboardUtils;
 import com.weatherapp.views.ActivityHandler;
 
 import java.util.ArrayList;
@@ -58,6 +59,12 @@ public class ForecastFragment extends Fragment implements ListAdapter.ListItemCl
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initViews();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        KeyboardUtils.hideKeyboard(getActivity());
     }
 
     private void initViews() {
