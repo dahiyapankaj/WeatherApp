@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dataModel"
+            type="com.weatherapp.data.models.zip.CurrentWeatherResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:padding="@dimen/margin_tv_item">
+
+        <TextView
+            android:id="@+id/label_City"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tv_item"
+            android:text="City Name:"
+            app:layout_constraintEnd_toStartOf="@+id/tv_city"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tv_item"
+            android:text="@{dataModel.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_City"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Delhi" />
+
+
+        <TextView
+            android:id="@+id/label_Weather"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tv_item"
+            android:text="Weather:"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_City" />
+
+        <TextView
+            android:id="@+id/tv_weather"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tv_item"
+            android:text="@{dataModel.primaryWeatherTitle}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_Weather"
+            app:layout_constraintTop_toBottomOf="@+id/tv_city"
+            tools:text="cloudy" />
+
+        <TextView
+            android:id="@+id/label_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tv_item"
+            android:text="Weather:"
+            app:layout_constraintEnd_toStartOf="@+id/tv_desc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_Weather" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tv_item"
+            android:text="@{dataModel.primaryWeatherDescription}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_desc"
+            app:layout_constraintTop_toBottomOf="@+id/tv_weather"
+            tools:text="overcast clouds" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
