@@ -29,6 +29,7 @@ App will be for only portrait orientation supporting multiple screen sizes excep
 * use of Rxjava filters for filtering data
 * more user freindly Ui
 * scripts to build project from command line.
+* handling of no internet or request failure scenarios.
 
 
 # Steps to run
