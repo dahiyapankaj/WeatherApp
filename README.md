@@ -15,16 +15,15 @@ App will be for only portrait orientation supporting multiple screen sizes excep
 
 * Language used - Java
 * Target SDK version - 29
-* Minimum SDK version - 21
+* Minimum SDK version - 15
 * Networking library - Retrofit
 * Architecture - MVVM
 * Android JetPack - for androidx
 * Data Binding
 * RxJava
 * LiveData
-*Retrofit
 
-#Possible enhancements which could not be done due to shotage of time
+#Possible enhancements which could not be done due to shortage of time
 
 * Junit tests
 * use of Rxjava filters for filtering data
